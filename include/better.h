@@ -155,7 +155,7 @@ char* input(char* buf, int siz);
 
 #endif /* BETTER_BETTER_H_ */
 
-#ifndef BETTER_SOURCE
+#ifdef BETTER_SOURCE
 
 #include <stdio.h>
 
