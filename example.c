@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+needed_standard(C89C);
+
 local none void_function(none) {
   printf("This is a void function\n");
 }
@@ -44,12 +46,18 @@ local none show_print_ptr(any* obj) {
   printf("Show 'any': %p\n", obj);
 }
 
+local none pp_features(none) {
+  printf("Compiled with standard "STDC_NAME" at %s %s\n", CUR_DATE, CUR_TIME);
+}
+
 int main(void) {
   int obj = 42;
+  unused(static_require_stdc_ver);
   void_function();
   show_input();
   show_math();
   show_print_ptr(&obj);
   show_trim();
+  pp_features();
   return 0; 
 }
